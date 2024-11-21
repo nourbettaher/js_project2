@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // String Manipulation Functions
+        // Reverse a String: Write a function that reverses a given string
+        function reverseString(str) {
+            let reverse = ""
+            for (let i = str.length - 1; i >= 0; i--) {
+                reverse += str[i]
+            }
+            return reverse
+        }
+        console.log(reverseString("gomycode"))
+        // Count Characters: Create a function that counts the number of characters in a string
+        function countChars(str) {
+            let count = 0
+            for (let i in str) {
+                count++
+            }
+            return count
+        }
+        console.log(countChars("gomycode"))
+        // Capitalize Words: Implement a function that capitalizes the first letter of each word in a sentence
+        function capWords(str) {
+            let arr = str.split(" ")
+            let newArr = []
+            for (let i in arr) {
+                newArr.push(arr[i][0].toUpperCase() + arr[i].substring(1))
+            }
+            return newArr.join(" ")
+        }
+        console.log(capWords("hello gomycode"))
+
+        // Array Functions
+
+        // Find Maximum and Minimum: Write functions to find the maximum and minimum values in an array of numbers
+        function findMax(arr) {
+            let max = arr[0]
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i]
+                }
+            }
+            return max
+        }
+        console.log(findMax([45, 98, 1, 700]))
+
+        function findMin(arr) {
+            let min = arr[0]
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] < min) {
+                    min = arr[i]
+                }
+            }
+            return min
+        }
+        console.log(findMin([45, 98, 1, 700]))
+
+
+
+        // Sum of Array: Create a function that calculates the sum of all elements in an array
+        function sumarr(arr) {
+            let sum = 0
+            for (let i of arr) {
+                sum += i
+            }
+            return sum
+        }
+        console.log(sumarr([45, 98, 1, 700]))
+
+        // Filter Array: Implement a function that filters out elements from an array based on a given condition
+        function filterStrings(arr) {
+            let newArr = []
+            for (let i of arr) {
+                if (typeof i === "string") {
+                    newArr.push(i)
+                }
+            }
+            return newArr
+        }
+        console.log(filterStrings([45, 'go', '58', 8, 'mycode']))
+
+
+        // Mathematical Functions:
+        // Factorial: Write a function to calculate the factorial of a given number.
+        function factorial(n) {
+            if (n < 0) {
+                return "Factorial is not defined for negative numbers."
+            }
+            if (n === 0 || n === 1) {
+                return 1
+            }
+            let result = 1
+            for (let i = 2; i <= n; i++) {
+                result *= i
+            }
+            return result;
+        }
+        console.log(factorial(5))
+        // Prime Number Check: Create a function to check if a number is prime or not.
+        function isPrime(n) {
+            if (n === 2) {
+                return true
+            }
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    return false
+                }
+                else {
+                    return true
+                }
+            }
+
+        }
+        console.log(isPrime(16))
+        // Fibonacci Sequence: Implement a function to generate the Fibonacci sequence up to a given number of terms
+        function fibonacci(n) {
+            const sequence = [];
+            if (n <= 0) {
+                return sequence;
+            }
+            let a = 0, b = 1;
+            for (let i = 0; i < n; i++) {
+                sequence.push(a);
+                const next = a + b;
+                a = b;
+                b = next;
+            }
+            return sequence;
+        }
+        console.log(fibonacci(10));
+
+    </script>
+</body>
+
+</html>
